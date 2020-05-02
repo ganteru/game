@@ -1,4 +1,4 @@
-#include "input.h"
+#include "input.hpp"
 
 Input::Input(GLFWwindow* window, int left, int right, int up, int down)
 	: m_window{ window }, m_left{ left }, m_right{ right }, m_up{ up }, m_down{ down }

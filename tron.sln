@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "game", "game\game.vcxproj", "{1F0FB085-571D-4980-B075-AC78D025509E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tron", "tron\tron.vcxproj", "{5A64F2CB-D5EC-4FAD-8A05-0B0F496CA5C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1F0FB085-571D-4980-B075-AC78D025509E}.Debug|x64.ActiveCfg = Debug|x64
-		{1F0FB085-571D-4980-B075-AC78D025509E}.Debug|x64.Build.0 = Debug|x64
-		{1F0FB085-571D-4980-B075-AC78D025509E}.Release|x64.ActiveCfg = Release|x64
-		{1F0FB085-571D-4980-B075-AC78D025509E}.Release|x64.Build.0 = Release|x64
+		{5A64F2CB-D5EC-4FAD-8A05-0B0F496CA5C3}.Debug|x64.ActiveCfg = Debug|x64
+		{5A64F2CB-D5EC-4FAD-8A05-0B0F496CA5C3}.Debug|x64.Build.0 = Debug|x64
+		{5A64F2CB-D5EC-4FAD-8A05-0B0F496CA5C3}.Release|x64.ActiveCfg = Release|x64
+		{5A64F2CB-D5EC-4FAD-8A05-0B0F496CA5C3}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {86FFC7A0-B43B-4EF7-81A6-C7902E0EB058}
+		SolutionGuid = {C4670CCC-6566-41FF-BAE8-2218F38C16BA}
 	EndGlobalSection
 EndGlobal

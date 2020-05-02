@@ -12,8 +12,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{1F0FB085-571D-4980-B075-AC78D025509E}</ProjectGuid>
-    <RootNamespace>game</RootNamespace>
+    <ProjectGuid>{5A64F2CB-D5EC-4FAD-8A05-0B0F496CA5C3}</ProjectGuid>
+    <RootNamespace>tron</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -45,14 +45,14 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\$(ProjectName)\</OutDir>
-    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\$(ProjectName)\</IntDir>
+    <IntDir>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\$(ProjectName)\</IntDir>
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)lib\include;</IncludePath>
     <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(SolutionDir)lib;</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\$(ProjectName)\</OutDir>
-    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\$(ProjectName)\</IntDir>
+    <IntDir>$(SolutionDir)bin\int\$(Configuration)-$(Platform)\$(ProjectName)\</IntDir>
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)lib\include;</IncludePath>
     <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(SolutionDir)lib;</LibraryPath>
   </PropertyGroup>
@@ -68,7 +68,7 @@
     <Link>
       <SubSystem>NotSet</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;gdi32.lib;user32.lib;shell32.lib;</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glfw3dll.lib;freetype.lib;gdi32.lib;user32.lib;shell32.lib;</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -83,41 +83,40 @@
       <AdditionalIncludeDirectories>$(SolutionDir)$(ProjectName)\src;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>NotSet</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <GenerateDebugInformation>false</GenerateDebugInformation>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;gdi32.lib;user32.lib;shell32.lib;</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;glfw3dll.lib;freetype.lib;gdi32.lib;user32.lib;shell32.lib;</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\batch.cpp" />
+    <ClCompile Include="src\game\input.cpp" />
+    <ClCompile Include="src\game\menu.cpp" />
+    <ClCompile Include="src\game\player.cpp" />
+    <ClCompile Include="src\graphics\batch.cpp" />
+    <ClCompile Include="src\graphics\renderer.cpp" />
+    <ClCompile Include="src\graphics\shader.cpp" />
+    <ClCompile Include="src\graphics\shape.cpp" />
+    <ClCompile Include="src\graphics\text.cpp" />
     <ClCompile Include="src\import\glad.c" />
-    <ClCompile Include="src\import\stb_image.cpp" />
-    <ClCompile Include="src\input.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\player.cpp" />
-    <ClCompile Include="src\shader.cpp" />
-    <ClCompile Include="src\sprite.cpp" />
-    <ClCompile Include="src\trail.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="resource.h" />
-    <ClInclude Include="src\batch.h" />
-    <ClInclude Include="src\import\stb_image.h" />
-    <ClInclude Include="src\input.h" />
-    <ClInclude Include="src\player.h" />
-    <ClInclude Include="src\shader.h" />
-    <ClInclude Include="src\sprite.h" />
-    <ClInclude Include="src\trail.h" />
+    <ClInclude Include="src\game\input.hpp" />
+    <ClInclude Include="src\game\menu.hpp" />
+    <ClInclude Include="src\game\player.hpp" />
+    <ClInclude Include="src\graphics\batch.hpp" />
+    <ClInclude Include="src\graphics\renderer.hpp" />
+    <ClInclude Include="src\graphics\shader.hpp" />
+    <ClInclude Include="src\graphics\shape.hpp" />
+    <ClInclude Include="src\graphics\text.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="icon1.ico" />
-    <Image Include="res\background.png" />
-    <Image Include="res\icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="game.rc" />
+    <None Include="res\color.frag" />
+    <None Include="res\color.vert" />
+    <None Include="res\text.frag" />
+    <None Include="res\text.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

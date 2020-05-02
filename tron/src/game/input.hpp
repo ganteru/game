@@ -1,10 +1,15 @@
 #pragma once
 #include <GLFW/glfw3.h>
 
+/*
+	Die Klasse Input ist eine Sammlung an Tasteneingaben
+	die sich speziell auf einen Player beziehen.
+*/
+
 class Input
 {
 private:
-	GLFWwindow*	m_window;
+	GLFWwindow* m_window;
 	int			m_left;
 	int			m_right;
 	int			m_up;
